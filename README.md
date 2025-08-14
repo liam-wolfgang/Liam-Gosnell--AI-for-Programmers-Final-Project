@@ -1,8 +1,13 @@
 
 # AI Profit Forecasting Tool for Digital Marketing Proposals
 
+## Project Overview
+This AI-powered web application helps sales teams at digital marketing agencies forecast the profit of client proposals. It uses machine learning models trained on historical proposals, client data, and delivery costs to generate quarterly profit predictions, confidence scores, and decision-support insights. The goal is to reduce reliance on intuition and improve pricing, planning, and resource allocation.
+
+---
+
 ## 1. Project Summary
-The **AI Profit Forecasting Tool** is a machine learning–powered web application that predicts the potential **quarterly profit** for our company after submitting a proposal to a prospective client. By analysing past proposals, historical revenue, delivery costs, and client characteristics, the system helps the sales and management teams to prioritise high-profit opportunities, set smarter pricing, and allocate resources efficiently.
+The **AI Profit Forecasting Tool** is a machine learning–powered web application that predicts the potential **quarterly profit** for our company after submitting a proposal to a prospective client. The system analyses past proposals, historical revenue, delivery costs, and client characteristics, the system helps the sales and management teams to prioritise high-profit opportunities, set smarter pricing, and allocate resources efficiently.
 
 ---
 
@@ -12,7 +17,7 @@ Currently, our sales team sends digital marketing proposals without an accurate,
 - Missing opportunities with high-profit potential
 - Inaccurate financial planning for upcoming quarters
 
-Without a profit forecast model, our team relies heavily on intuition — often biased and inconsistent.
+In the absence of a forecasting model, the sales process is driven by subjective judgment, which can result in inconsistent outcomes and missed revenue opportunities.
 
 ---
 
@@ -35,7 +40,7 @@ Without a profit forecast model, our team relies heavily on intuition — often 
 ---
 
 ## 4. AI-Powered Solution
-We propose developing an AI-driven prediction model that:
+This application features an AI-driven prediction model that:
 - **Inputs:** Proposal details, client profile, industry, proposed services, estimated delivery costs, and historical deal outcomes
 - **Outputs:** Predicted profit for each of the next four quarters (if the deal is won), along with a confidence score and the top factors influencing the prediction
 
