@@ -1,7 +1,7 @@
 # AI Profit Forecasting Tool for Digital Marketing Proposals
 
 ## 1. Project Summary
-The **AI Profit Forecasting Tool** is a machine learning–powered application that predicts the potential **quarterly profit** for our company after submitting a proposal to a prospective client. By analysing past proposals, historical revenue, delivery costs, and client characteristics, the system helps the sales and management teams prioritise high-profit opportunities, set smarter pricing, and allocate resources efficiently.
+The **AI Profit Forecasting Tool** is a machine learning–powered web application that predicts the potential **quarterly profit** for our company after submitting a proposal to a prospective client. By analysing past proposals, historical revenue, delivery costs, and client characteristics, the system helps the sales and management teams prioritise high-profit opportunities, set smarter pricing, and allocate resources efficiently.
 
 ---
 
@@ -15,8 +15,26 @@ Without a profit forecast model, our team relies heavily on intuition, which can
 
 ---
 
+## 2.5 Use Case & Workflow
+**Primary User:** Sales team members and management within our digital marketing agency.
+
+**Workflow:**
+1. A sales rep drafts a proposal for a potential client in the proposal platform.
+2. The proposal details are submitted to the AI Profit Forecasting Tool.
+3. The AI model analyses the data and predicts profit for each of the next 4 quarters.
+4. The dashboard displays:
+   - Forecasted profit values
+   - Confidence scores
+   - Key factors influencing the prediction
+5. The sales team uses these insights to:
+   - Decide whether to pursue or adjust the proposal
+   - Set more competitive and profitable pricing
+   - Plan resource allocation for service delivery
+
+---
+
 ## 3. AI-Powered Solution
-I propose developing an AI-driven prediction model that:
+We propose developing an AI-driven prediction model that:
 - **Inputs:** Proposal details, client profile, industry, proposed services, estimated delivery costs, and historical deal outcomes
 - **Outputs:** Predicted profit for each of the next 4 quarters (if the deal is won), along with a confidence score and the top factors influencing the prediction
 
@@ -49,34 +67,88 @@ I propose developing an AI-driven prediction model that:
 - **Hosting:** AWS, GCP, or Azure
 
 **Architecture Flow:**
+```
+[Proposal Submission] → [API Receives Data] → [ML Model Predicts Profit]
+→ [Confidence Score + Key Drivers] → [Dashboard Displays Results]
+```
 
-[Proposal Submission] → [API Receives Data] → [ML Model Predicts Profit]  
-→ [Confidence Score + Key Drivers] → [Dashboard Displays Results]  
+---
 
+## 4.5 AI Features to Be Implemented
+- **Prompt Engineering:** If an LLM is used to generate human-readable explanations of predictions, prompts will be structured to request concise, business-focused insights.
+- **Structured Outputs:** Predictions and explanations will be returned in JSON format, containing `profit_forecast`, `confidence_score`, and `key_factors`.
+- **Retrieval-Augmented Generation (RAG):** Historical proposal data can be stored in a vector database (e.g., Pinecone, Weaviate) for retrieving similar past deals to provide context alongside predictions.
+- **Evaluation Frameworks:** Model accuracy will be measured using MAE and R²; predictions will be compared against actual profits.
+- **Observability Tools:** MLflow for model performance tracking, and API monitoring for response time and error rates.
+
+---
+
+## 4.6 Example Prompts & Expected Outputs
+**Prompt to LLM for explanation:**
+Given the following proposal data and profit prediction, explain the top three reasons why the predicted profit is €15,000 for Q1:
+{proposal_data}
+{prediction_data}
+
+**Expected Output (JSON Structured):**
+```json
+{
+  "predicted_profit": {
+    "Q1": 15000,
+    "Q2": 17500,
+    "Q3": 18000,
+    "Q4": 16000
+  },
+  "confidence_score": 0.87,
+  "key_factors": [
+    "High historical win rate in client's industry",
+    "Service mix includes high-margin SEO and PPC",
+    "Discount offered is within optimal profitability range"
+  ]
+}
+```
+
+---
+
+## 4.7 Evaluation Strategy
+**Technical Metrics:**
+- Mean Absolute Error (MAE) to measure average prediction error
+- R² score to measure how well predictions explain variance in actual profit
+
+**Business Metrics:**
+- Percentage of correctly identified high-profit deals
+- Increase in average profit per signed deal after using the tool
+
+---
+
+## 4.8 Observability Plan
+- **Model Monitoring:** Track prediction accuracy over time and retrain quarterly
+- **Error Tracking:** Log all failed predictions or anomalies in inputs
+- **Usage Analytics:** Monitor how often sales reps consult the prediction before closing deals
+- **Tooling:** MLflow for experiment tracking, Prometheus or similar for API metrics, and custom logging for dashboard usage
 
 ---
 
 ## 5. Implementation Plan
 
-**Phase 1 – Data Preparation**
+### Phase 1 – Data Preparation
 - Collect historical proposal, revenue, and cost data
 - Clean and standardise datasets
 - Ensure GDPR compliance through anonymisation
 
-**Phase 2 – Model Development**
+### Phase 2 – Model Development
 - Feature engineering & selection
 - Train initial regression model
 - Validate with hold-out test set
 
-**Phase 3 – Application Build**
+### Phase 3 – Application Build
 - Develop backend API to serve predictions
 - Build a simple web dashboard for internal use
 
-**Phase 4 – Deployment**
+### Phase 4 – Deployment
 - Deploy model and API to cloud environment
 - Integrate dashboard for sales team access
 
-**Phase 5 – Monitoring & Iteration**
+### Phase 5 – Monitoring & Iteration
 - Monitor model accuracy
 - Retrain quarterly with new data
 
@@ -99,10 +171,10 @@ I propose developing an AI-driven prediction model that:
 
 ## 8. Future Enhancements
 - Integrate real-time ad performance data post-deal to refine predictions
-- Add “what-if” scenario testing for different proposal configurations
+- Add "what-if" scenario testing for different proposal configurations
 - Incorporate macroeconomic indicators to improve forecast precision
 
 ---
 
-**Author:** Liam Gosnell  
+**Author:** Liam Gosnell 
 **Date:** 12 August 2025
