@@ -167,9 +167,13 @@ Focus on business insights that would help the sales team understand the predict
 ## 10. Implementation Plan
 
 **Phase 1:** Data preparation and GDPR compliance
+
 **Phase 2:** Model development and validation
+
 **Phase 3:** Application build (backend + dashboard)
+
 **Phase 4:** Deployment to cloud
+
 **Phase 5:** Monitoring and quarterly updates
 
 ---
