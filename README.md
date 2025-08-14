@@ -50,7 +50,8 @@ I propose developing an AI-driven prediction model that:
 
 **Architecture Flow:**
 
-[Proposal Submission] → [API Receives Data] → [ML Model Predicts Profit] → [Confidence Score + Key Drivers] → [Dashboard Displays Results]
+[Proposal Submission] → [API Receives Data] → [ML Model Predicts Profit]  
+→ [Confidence Score + Key Drivers] → [Dashboard Displays Results]  
 
 
 ---
@@ -101,3 +102,7 @@ I propose developing an AI-driven prediction model that:
 - Add “what-if” scenario testing for different proposal configurations
 - Incorporate macroeconomic indicators to improve forecast precision
 
+---
+
+**Author:** Liam Gosnell  
+**Date:** 12 August 2025
