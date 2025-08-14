@@ -146,12 +146,13 @@ Focus on business insights that would help the sales team understand the predict
 ## 8. Evaluation Strategy
 
 **Technical Metrics:**
+- Mean Absolute Error (MAE)
+- R² score
 
-* Mean Absolute Error (MAE)
-* R² score
-  **Business Metrics:**
-* % of correctly identified high-profit deals
-* Increase in average profit per signed deal
+**Business Metrics:**
+- % of correctly identified high-profit deals
+- Increase in average profit per signed deal
+
 
 ---
 
