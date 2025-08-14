@@ -206,5 +206,3 @@ Focus on business insights that would help the sales team understand the predict
 **Author:** Liam Gosnell
 **Date:** 12 August 2025
 
-```
-```
