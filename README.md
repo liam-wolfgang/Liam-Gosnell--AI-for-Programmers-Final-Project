@@ -75,21 +75,33 @@ We propose developing an AI-driven prediction model that:
 ---
 
 ## 4.5 AI Features to Be Implemented
-- **Prompt Engineering:** If an LLM is used to generate human-readable explanations of predictions, prompts will be structured to request concise, business-focused insights.
-- **Structured Outputs:** Predictions and explanations will be returned in JSON format, containing `profit_forecast`, `confidence_score`, and `key_factors`.
-- **Retrieval-Augmented Generation (RAG):** Historical proposal data can be stored in a vector database (e.g., Pinecone, Weaviate) for retrieving similar past deals to provide context alongside predictions.
-- **Evaluation Frameworks:** Model accuracy will be measured using MAE and R²; predictions will be compared against actual profits.
-- **Observability Tools:** MLflow for model performance tracking, and API monitoring for response time and error rates.
+- **Prompt Engineering:** If an LLM is used to generate human-readable explanations of predictions, prompts will be structured to request concise, business-focused insights. *Relevance: Sales teams need clear, actionable explanations to understand why a proposal is predicted to be profitable, helping them adjust strategies accordingly.*
+
+- **Structured Outputs:** Predictions and explanations will be returned in JSON format, containing `profit_forecast`, `confidence_score`, and `key_factors`. *Relevance: Structured data enables easy integration with existing CRM systems and allows for automated decision-making workflows.*
+
+- **Retrieval-Augmented Generation (RAG):** Historical proposal data can be stored in a vector database (e.g., Pinecone, Weaviate) for retrieving similar past deals to provide context alongside predictions. *Relevance: By finding similar historical proposals, the system can provide more accurate predictions and explain patterns based on actual past outcomes.*
+
+- **Evaluation Frameworks:** Model accuracy will be measured using MAE and R²; predictions will be compared against actual profits. *Relevance: Continuous evaluation ensures the model remains accurate as market conditions change and new data becomes available.*
+
+- **Observability Tools:** MLflow for model performance tracking, and API monitoring for response time and error rates. *Relevance: Monitoring helps identify when the model needs retraining and ensures reliable service for sales teams making time-sensitive decisions.*
 
 ---
 
 ## 4.6 Example Prompts & Expected Outputs
-**Prompt to LLM for explanation:**
-Given the following proposal data and profit prediction, explain the top three reasons why the predicted profit is €15,000 for Q1:
-{proposal_data}
-{prediction_data}
 
-**Expected Output (JSON Structured):**
+**Prompt 1 - Profit Prediction:**
+```
+Analyze the following proposal for a digital marketing client:
+- Client Industry: E-commerce
+- Proposal Value: €50,000
+- Services: SEO (40%), PPC (35%), Content Marketing (25%)
+- Client Size: Mid-market (100-500 employees)
+- Historical Win Rate in Industry: 75%
+
+Predict quarterly profit for the next 4 quarters and provide confidence score.
+```
+
+**Expected Output 1 (JSON Structured):**
 ```json
 {
   "predicted_profit": {
@@ -104,6 +116,27 @@ Given the following proposal data and profit prediction, explain the top three r
     "Service mix includes high-margin SEO and PPC",
     "Discount offered is within optimal profitability range"
   ]
+}
+```
+
+**Prompt 2 - Explanation Generation:**
+```
+Given the following proposal data and profit prediction, explain the top three reasons why the predicted profit is €15,000 for Q1:
+{proposal_data}
+{prediction_data}
+
+Focus on business insights that would help the sales team understand the prediction.
+```
+
+**Expected Output 2 (Structured Explanation):**
+```json
+{
+  "explanation": {
+    "primary_reason": "Strong historical performance in e-commerce sector with 75% win rate",
+    "secondary_reason": "Optimal service mix with 75% allocated to high-margin services (SEO + PPC)",
+    "tertiary_reason": "Proposal value aligns with profitable deal size range (€40k-€60k)",
+    "recommendation": "Consider slight price increase as confidence score indicates room for margin improvement"
+  }
 }
 ```
 
@@ -176,5 +209,7 @@ Given the following proposal data and profit prediction, explain the top three r
 
 ---
 
-**Author:** Liam Gosnell 
+**Author:** Liam Gosnell
 **Date:** 12 August 2025
+
+
