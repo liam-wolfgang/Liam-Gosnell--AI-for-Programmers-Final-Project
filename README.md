@@ -50,6 +50,27 @@ I propose developing an AI-driven prediction model that:
 
 **Architecture Flow:**
 
+┌────────────────────┐
+│ Proposal Submission │
+└─────────┬──────────┘
+          │
+          ▼
+┌────────────────────┐
+│ API Receives Data  │
+└─────────┬──────────┘
+          │
+          ▼
+┌───────────────────────────────┐
+│ ML Model Predicts Quarterly   │
+│ Profit + Confidence Score     │
+└─────────┬─────────────────────┘
+          │
+          ▼
+┌───────────────────────────────┐
+│ Dashboard Displays Predictions│
+│ and Key Drivers               │
+└───────────────────────────────┘
+
 
 ---
 
