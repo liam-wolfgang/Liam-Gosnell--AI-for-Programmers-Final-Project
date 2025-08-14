@@ -1,4 +1,4 @@
-```markdown
+
 # AI Profit Forecasting Tool for Digital Marketing Proposals
 
 ## 1. Project Summary
