@@ -49,3 +49,53 @@ I propose developing an AI-driven prediction model that:
 - **Hosting:** AWS, GCP, or Azure
 
 **Architecture Flow:**
+
+
+---
+
+## 5. Implementation Plan
+
+**Phase 1 – Data Preparation**
+- Collect historical proposal, revenue, and cost data
+- Clean and standardise datasets
+- Ensure GDPR compliance through anonymisation
+
+**Phase 2 – Model Development**
+- Feature engineering & selection
+- Train initial regression model
+- Validate with hold-out test set
+
+**Phase 3 – Application Build**
+- Develop backend API to serve predictions
+- Build a simple web dashboard for internal use
+
+**Phase 4 – Deployment**
+- Deploy model and API to cloud environment
+- Integrate dashboard for sales team access
+
+**Phase 5 – Monitoring & Iteration**
+- Monitor model accuracy
+- Retrain quarterly with new data
+
+---
+
+## 6. Potential Challenges & Mitigations
+- **Small Dataset:** Augment with industry benchmarks and synthetic data generation
+- **Changing Market Conditions:** Retrain model regularly to adapt to shifts in marketing ROI
+- **Data Privacy:** Fully anonymise client identifiers before processing
+
+---
+
+## 7. Expected Benefits & Impact
+- **Higher Profit Margins:** Focus on high-profit deals
+- **Smarter Resource Allocation:** Avoid overspending on low-margin clients
+- **Data-Driven Pricing:** Adjust proposals for optimal profitability
+- **Improved Forecast Accuracy:** Better quarterly financial planning
+
+---
+
+## 8. Future Enhancements
+- Integrate real-time ad performance data post-deal to refine predictions
+- Add “what-if” scenario testing for different proposal configurations
+- Incorporate macroeconomic indicators to improve forecast precision
+
