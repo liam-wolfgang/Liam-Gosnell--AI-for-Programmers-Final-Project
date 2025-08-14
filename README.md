@@ -16,7 +16,7 @@ Without a profit forecast model, our team relies heavily on intuition, which can
 ---
 
 ## 3. AI-Powered Solution
-We propose developing an AI-driven prediction model that:
+I propose developing an AI-driven prediction model that:
 - **Inputs:** Proposal details, client profile, industry, proposed services, estimated delivery costs, and historical deal outcomes
 - **Outputs:** Predicted profit for each of the next 4 quarters (if the deal is won), along with a confidence score and the top factors influencing the prediction
 
